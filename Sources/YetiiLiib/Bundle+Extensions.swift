@@ -1,9 +1,9 @@
 import Foundation
 
-private class InternalClass {}
+private final class InternalClass {}
 
 extension Bundle {
-    @nonobjc
+
     internal static let framework = Bundle(for: InternalClass.self)
 
     public var appName: String? {
@@ -29,7 +29,4 @@ extension Bundle {
         return object(forInfoDictionaryKey: "CFBundleVersion") as! String
     }
 
-    internal var appIcon: UIImage? {
-        return UIImage(named: "App Icon 128pt", in: self, compatibleWith: nil)
-    }
 }
